@@ -1,6 +1,0 @@
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\bin\Debug\Entidades.dll
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\bin\Debug\Entidades.pdb
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\obj\Debug\Entidades.dll
-C:\Users\UTN-Clases\source\repos\EjercicioN1POO\Entidades\obj\Debug\Entidades.pdb
