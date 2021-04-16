@@ -32,7 +32,7 @@ namespace Formulario
             for (int i = 0; i < 5; i++)
             {
                 this.listaDeVehiculos.Add(new Avion(random.Next(1, 300)));
-                this.listaDeVehiculos.Add(new Automovil(random.Next(1, 300)));
+                this.listaDeVehiculos.Add(new Automovil(random.Next(1, 5)));
             }
         }
 

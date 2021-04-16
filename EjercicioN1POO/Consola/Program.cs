@@ -18,7 +18,7 @@ namespace Consola
             for (int i = 0; i < 5; i++)
             {
                 listaDeVehiculos.Add(new Avion(random.Next(1, 300)));
-                listaDeVehiculos.Add(new Automovil(random.Next(1, 300)));
+                listaDeVehiculos.Add(new Automovil(random.Next(1, 5)));
             }
 
             foreach (var transporte in listaDeVehiculos)
