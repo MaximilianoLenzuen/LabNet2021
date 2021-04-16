@@ -25,7 +25,7 @@ namespace Consola
             {
                 if (transporte is Avion)
                 {
-                    Console.WriteLine($"Avion {t}: {transporte.Pasajeros} pasajeros");
+                    Console.WriteLine(transporte.MostrarDatos(t));
                     t++;
                 }
             }
@@ -34,7 +34,7 @@ namespace Consola
             {
                 if (transporte is Automovil)
                 {
-                    Console.WriteLine($"Automovil {j}: {transporte.Pasajeros} pasajeros");
+                    Console.WriteLine(transporte.MostrarDatos(j));
                     j++;
                 }
             }

@@ -43,7 +43,7 @@ namespace Formulario
             {
                 if (transporte is Avion)
                 {
-                    sb.AppendLine($"Avion {t}: {transporte.Pasajeros} pasajeros");
+                    sb.AppendLine(transporte.MostrarDatos(t));
                     t++;
                 }
             }
@@ -52,7 +52,7 @@ namespace Formulario
             {
                 if (transporte is Automovil)
                 {
-                    sb.AppendLine($"Automovil {j}: {transporte.Pasajeros} pasajeros");
+                    sb.AppendLine(transporte.MostrarDatos(j));
                     j++;
                 }
             }

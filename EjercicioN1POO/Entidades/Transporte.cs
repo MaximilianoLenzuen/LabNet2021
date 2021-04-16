@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Transporte
+    public abstract class Transporte : IMostrar
     {
         #region Atributos
 
@@ -33,6 +33,8 @@ namespace Entidades
         public abstract string Avanzar();
 
         public abstract string Detenerse();
+
+        public abstract string MostrarDatos(int index);
 
         #endregion
     }

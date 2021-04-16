@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Avion : Transporte
+    public class Avion : Transporte , IMostrar
     {
         #region Constructor
         public Avion(int pasajeros) : base(pasajeros)
@@ -24,6 +24,11 @@ namespace Entidades
         public override string Detenerse()
         {
             return "El avion no se puede detener en el aire...";
+        }
+
+        public override string MostrarDatos(int index)
+        {
+            return $"Avion {index}: {this.Pasajeros} pasajeros";
         }
         #endregion
     }

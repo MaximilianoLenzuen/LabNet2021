@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Automovil.cs" />
     <Compile Include="Avion.cs" />
+    <Compile Include="IMostrar.cs" />
     <Compile Include="Transporte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
