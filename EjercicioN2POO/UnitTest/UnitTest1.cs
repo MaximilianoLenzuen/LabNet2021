@@ -31,11 +31,12 @@ namespace UnitTest
         public void GivenValidNumberAndZero_WhenDivision_ThenReturnZero(int dividendo)
         {
             // Arrange
-            const int divisor = 0;
-            const int esperado = 0;
+            int divisor = 0;
+            int esperado = 0;
+            int retorno;
 
             // Act
-            var retorno = dividendo.Division(divisor);
+            retorno = dividendo.Division(divisor);
 
             // Assert
             Assert.AreEqual(esperado, retorno);
