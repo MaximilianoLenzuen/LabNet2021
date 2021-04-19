@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{F6C4666D-EF51-49F9-8B20-75AF9B557587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{A8732F32-DF8B-45B4-96AF-6A47B8898AE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola", "Consola\Consola.csproj", "{000A3233-8B5C-4607-94A3-5CB3BAC13BF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6C4666D-EF51-49F9-8B20-75AF9B557587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C4666D-EF51-49F9-8B20-75AF9B557587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C4666D-EF51-49F9-8B20-75AF9B557587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C4666D-EF51-49F9-8B20-75AF9B557587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8732F32-DF8B-45B4-96AF-6A47B8898AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8732F32-DF8B-45B4-96AF-6A47B8898AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8732F32-DF8B-45B4-96AF-6A47B8898AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8732F32-DF8B-45B4-96AF-6A47B8898AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000A3233-8B5C-4607-94A3-5CB3BAC13BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000A3233-8B5C-4607-94A3-5CB3BAC13BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000A3233-8B5C-4607-94A3-5CB3BAC13BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000A3233-8B5C-4607-94A3-5CB3BAC13BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE66E58E-89C9-4ACA-93CB-5D1C0C15609B}
+	EndGlobalSection
+EndGlobal
