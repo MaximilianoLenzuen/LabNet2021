@@ -57,8 +57,6 @@ namespace EjercicioLinq.Logic
         
         public List<Customers> ReturnJoinCustomers()
         {
-            //Method sintax
-
             //Query sintax
 
             var query = from customers in context.Customers
@@ -68,7 +66,6 @@ namespace EjercicioLinq.Logic
                         where customers.Region == "WA" && orders.OrderDate < new DateTime(1997, 1, 1)
                         select customers;
             return query.ToList();
-            
         }
         
         

@@ -78,16 +78,12 @@ namespace EjercicioLinq.Logic
 
         public List<Products> ReturnDistinctProductCategories()
         {
-            //Method Sintax
-            /*
-            return context.Products.OrderByDescending(c => c.UnitsInStock)
-                                .ToList();
-            */
             //Query Sintax
 
-            var query = from customers in context.Products
-                        orderby customers.UnitsInStock descending
-                        select customers;
+            var query = from products in context.Products
+                        group products by products.CategoryID 
+                        into distinct
+                        select distinct.FirstOrDefault();
             return query.ToList();
         }
 
