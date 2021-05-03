@@ -37,22 +37,19 @@ namespace EjercicioLinq.Logic
             
         }
 
-        /*
+
         //Ejercicio 6. Query para devolver los nombre de los Customers. Mostrarlos en Mayuscula y en Minuscula.
-        public List<Customers> ReturnNamesFromCustomers()
+        public List<CustomerName> ReturnNamesFromCustomers()
         {
             //Method sintax
-            //return context.Customers.Select(x => new { NameLower = x.ContactName.ToLower(), NameUpper = x.ContactName.ToUpper() }).ToList();
-            //Query sintax
-            
-            var query = from customers in context.Customers
-                        select new
-                        {
-                            NameLower = customers.ContactName.ToLower(),
-                        };
-            return (List<Customers>)query;
+            return context.Customers.Select(x =>
+            new CustomerName {
+                NameLower = x.ContactName.ToLower(),
+                NameUpper = x.ContactName.ToUpper()
+            }).ToList();
+
         }
-        */
+        
 
         //Ejercicio 7. Query para devolver Join entre Customers y Orders donde los customers sean de
         //Washington y la fecha de orden sea mayor a 1/1/1997.
@@ -66,17 +63,14 @@ namespace EjercicioLinq.Logic
 
             var query = from customers in context.Customers
                         join orders in context.Orders
-                        on new { customers.Orders }
-                           equals new { orders = orders.OrderID }
-                        select new
-                        {
-                            customers.ContactName,
-                            orders.OrderDate()
-                        };
+                            on customers.CustomerID
+                            equals orders.CustomerID
+                        where customers.Region == "WA" && orders.OrderDate < new DateTime(1997, 1, 1)
+                        select customers;
             return query.ToList();
             
         }
-         
+        
         
 
         //Ejercicio 8 Query para devolver los primeros 3 Customers de Washington
@@ -98,25 +92,26 @@ namespace EjercicioLinq.Logic
 
         //Ejercicio 13 Query para devolver los customer con la cantidad de ordenes asociadas
 
+        /*
         public List<Customers> ReturnAmountOfOrders()
         {
-            //Method sintax
-            /*return context.Customers.Where(c => c.Region == "WA")
-                                .Take(3)
-                                .ToList();
-            */
+
             //Query sintax
 
             var query = from customers in context.Customers
                         join orders in context.Orders
-                        on new {customers.Orders }
-                          equals new { orders.OrderID}
+                        on customers.CustomerID
+                          equals orders.CustomerID
+                        group customers by orders.CustomerID into amountOrders
                         select new
                         {
-                            customers.
-                        }
+                            Customer = amountOrders;
+                        };
             return query.ToList();
-
         }
+        */
+        
+    
+
     }
 }

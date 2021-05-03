@@ -101,7 +101,7 @@ namespace EjercicioLinq.Logic
                                 .ToList();
             
             //Query Sintax
-
+            
             var query = from customers in context.Products
                         select customers;
             return query.Take(1).ToList();

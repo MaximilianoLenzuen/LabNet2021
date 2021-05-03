@@ -24,10 +24,10 @@ namespace EjercicioLinq.UI
             var query4 = customers.ReturnCustomersFromWashington();
             //Ejercicio 5 test 
             var query5 = products.ReturnFirstProductNotNullAndIdEquals789();
-            //Ejercicio 6 test REVISAR
-            //var query6 = customers.ReturnNamesFromCustomers();
-            //Ejercicio 7 test REVISAR
-            //var query7 = customers.ReturnJoinCustomers();
+            //Ejercicio 6 test 
+            var query6 = customers.ReturnNamesFromCustomers();
+            //Ejercicio 7 test
+            var query7 = customers.ReturnJoinCustomers();
             //Ejercicio 8 test 
             var query8 = customers.ReturnFirstThreeCustomersFromWashington();
             //Ejercicio 9 test
