@@ -76,14 +76,17 @@ namespace EjercicioLinq.Logic
 
         //Ejercicio 11. Query para devolver las distintas categorías asociadas a los productos
 
-        public List<Products> ReturnDistinctProductCategories()
+        public List<string> ReturnDistinctProductCategories()
         {
             //Query Sintax
 
             var query = from products in context.Products
-                        group products by products.CategoryID 
-                        into distinct
-                        select distinct.FirstOrDefault();
+                        join categories in context.Categories
+                            on products.CategoryID
+                            equals categories.CategoryID
+                        group products by new { products.CategoryID,categories.CategoryName }
+                        into productsCategories
+                        select productsCategories.Key.CategoryName;
             return query.ToList();
         }
 
@@ -97,11 +100,13 @@ namespace EjercicioLinq.Logic
                                 .ToList();
             
             //Query Sintax
-            
+            /*
             var query = from customers in context.Products
                         select customers;
             return query.Take(1).ToList();
+            */
         }
+
 
     }
 }

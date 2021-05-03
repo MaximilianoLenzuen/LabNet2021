@@ -63,7 +63,7 @@ namespace EjercicioLinq.Logic
                         join orders in context.Orders
                             on customers.CustomerID
                             equals orders.CustomerID
-                        where customers.Region == "WA" && orders.OrderDate < new DateTime(1997, 1, 1)
+                        where customers.Region == "WA" && orders.OrderDate > new DateTime(1997, 1, 1)
                         select customers;
             return query.ToList();
         }

@@ -16,6 +16,7 @@ namespace EjercicioLinq.Data
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
