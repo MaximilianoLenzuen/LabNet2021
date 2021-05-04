@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Front</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div style="width: 230px;">
+    <div class="">
+    <h1>CONTACTO</h1>
+    <p>Completa tus datos.</p>
+        <form action="">
+            <fieldset>
+                <legend>Informacion Personal</legend>
+                <label for="txtNombre">Nombre:</label>
+                <br>
+                <input type="text" id="txtNombre">
+                <br>
+                <label for="txtApellido">Apellido:</label>
+                <br>
+                <input type="text" id="txtApellido">
+                <br>
+                <label for="txtEdad">Edad:</label>
+                <br>
+                <input type="text" id="txtEdad">
+                <br>
+                <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
+                <label for="radioMasculino"> Masculino</label>
+                <br>
+                <input type="radio" name="sexo" id="radioFemenino" value="Femenino">
+                <label for="radioFemenino"> Femenino</label>
+                <br>
+                <input type="radio" name="sexo" id="radioOtro" value="Otro" checked>
+                <label for="radioOtro"> Otro</label>
+                <br>
+            </fieldset>
+            <fieldset>
+                <legend>Informacion Adicional</legend>
+                <label for="txtEmpresa">Empresa:</label>
+                <br>
+                <input type="text" id="txtNombre">
+            </fieldset>
+            <div class="btn-group">
+            <button type="button" id="btn-submit">Submit</button>
+            <button type="button" id="btn-clear">Limpiar</button>
+            </div>
+        </form>
+    </div>
+    <style>
+        #txtEdad {
+            width: 50px;
+        }
+    </style>
+    <script src="./js/jquery.js"></script>
+</body>
+</html>

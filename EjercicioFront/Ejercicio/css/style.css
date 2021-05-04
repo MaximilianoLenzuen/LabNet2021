@@ -1,0 +1,11 @@
+.container{
+    background-color: #5072A7;
+    font-style: italic;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+}
