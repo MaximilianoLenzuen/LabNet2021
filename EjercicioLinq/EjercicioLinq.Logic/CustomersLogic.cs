@@ -49,22 +49,24 @@ namespace EjercicioLinq.Logic
             }).ToList();
 
         }
-        
+
 
         //Ejercicio 7. Query para devolver Join entre Customers y Orders donde los customers sean de
         //Washington y la fecha de orden sea mayor a 1/1/1997.
 
-        
-        public List<Customers> ReturnJoinCustomers()
+        public List<CustomerOrder> ReturnJoinCustomers()
         {
             //Query sintax
-
             var query = from customers in context.Customers
                         join orders in context.Orders
                             on customers.CustomerID
                             equals orders.CustomerID
                         where customers.Region == "WA" && orders.OrderDate > new DateTime(1997, 1, 1)
-                        select customers;
+                        select new CustomerOrder
+                        {
+                            Customer = customers,
+                            Order = orders
+                        };
             return query.ToList();
         }
         
@@ -99,16 +101,15 @@ namespace EjercicioLinq.Logic
                         join orders in context.Orders
                         on customers.CustomerID
                           equals orders.CustomerID
-                        group customers by orders.CustomerID into amountOrders
-                        select new
+                        group customers by orders.CustomerID 
+                        into amountOrders
+                        select new CustomerOrderAmount
                         {
-                            Customer = amountOrders;
+                            Customer = customers,
+                            Amount = amountOrders.Count()
                         };
             return query.ToList();
         }
         */
-        
-    
-
     }
 }

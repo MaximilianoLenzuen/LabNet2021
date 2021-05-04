@@ -34,12 +34,12 @@ namespace EjercicioLinq.UI
             var query9 = products.ReturnProductsOrderByName();
             //Ejercicio 10 test
             var query10 = products.ReturnProductsOrderDescByUnitStock();
-            //Ejercicio 11 test REVISAR
+            //Ejercicio 11 test 
             var query11 = products.ReturnDistinctProductCategories();
             //Ejercicio 12 test
             var query12 = products.ReturnFirstProduct();
-            //Ejercicio 13 test REVISAR
-
+            //Ejercicio 13 test 
+            //var query13 = customers.ReturnAmountOfOrders();
             //Poner breakpoint para revisar lo que contiene cada queryN°
             Console.ReadKey();
         }
