@@ -90,26 +90,26 @@ namespace EjercicioLinq.Logic
         }
 
         //Ejercicio 13 Query para devolver los customer con la cantidad de ordenes asociadas
-
-        /*
-        public List<Customers> ReturnAmountOfOrders()
+  
+        public IEnumerable<dynamic> ReturnAmountOfOrders()
         {
 
             //Query sintax
-
             var query = from customers in context.Customers
                         join orders in context.Orders
                         on customers.CustomerID
-                          equals orders.CustomerID
-                        group customers by orders.CustomerID 
-                        into amountOrders
-                        select new CustomerOrderAmount
+                            equals orders.CustomerID
+                        into count
+                        select new 
                         {
-                            Customer = customers,
-                            Amount = amountOrders.Count()
+                            ID = customers.CustomerID,
+                            ContactName = customers.ContactName,
+                            OrdersCuantity = count.Count()
                         };
             return query.ToList();
+
+
         }
-        */
+        
     }
 }

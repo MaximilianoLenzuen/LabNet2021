@@ -39,7 +39,7 @@ namespace EjercicioLinq.UI
             //Ejercicio 12 test
             var query12 = products.ReturnFirstProduct();
             //Ejercicio 13 test 
-            //var query13 = customers.ReturnAmountOfOrders();
+            var query13 = customers.ReturnAmountOfOrders();
             //Poner breakpoint para revisar lo que contiene cada queryN°
             Console.ReadKey();
         }
