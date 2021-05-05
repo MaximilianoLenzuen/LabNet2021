@@ -1,8 +1,17 @@
+
 form{
     font-style: italic;
     background-color: gray;
 }
 
+.info-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.radioBox-sexo{
+    display: flex;
+}
 .btn-group{
     display: flex;
     justify-content: space-between;

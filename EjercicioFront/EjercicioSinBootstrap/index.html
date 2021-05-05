@@ -13,47 +13,50 @@
     </script>
 </head>
 <body>
-    <div style="width: 230px;">
-    <div class="">
     <h1>CONTACTO</h1>
     <p>Completa tus datos.</p>
-        <form action="">
-            <fieldset>
-                <legend>Informacion Personal</legend>
+    <form action="" style="width: 230px;">
+        <fieldset>
+            <legend>Informacion Personal</legend>
+            <div class="info-form">
                 <label for="txtNombre">Nombre:</label>
-                <br>
                 <input type="text" id="txtNombre">
-                <br>
-                <label for="txtApellido">Apellido:</label>
-                <br>
-                <input type="text" id="txtApellido">
-                <br>
-                <label for="txtEdad">Edad:</label>
-                <br>
-                <input type="text" id="txtEdad">
-                <br>
-                <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
-                <label for="radioMasculino"> Masculino</label>
-                <br>
-                <input type="radio" name="sexo" id="radioFemenino" value="Femenino">
-                <label for="radioFemenino"> Femenino</label>
-                <br>
-                <input type="radio" name="sexo" id="radioOtro" value="Otro" checked>
-                <label for="radioOtro"> Otro</label>
-                <br>
-            </fieldset>
-            <fieldset>
-                <legend>Informacion Adicional</legend>
-                <label for="txtEmpresa">Empresa:</label>
-                <br>
-                <input type="text" id="txtNombre">
-            </fieldset>
-            <div class="btn-group">
-            <button type="button" id="btn-submit">Submit</button>
-            <button type="button" id="btn-clear">Limpiar</button>
             </div>
-        </form>
-    </div>
+            <div class="info-form">
+                <label for="txtApellido">Apellido:</label>
+                <input type="text" id="txtApellido">
+            </div>
+            <div class="info-form">   
+                <label for="txtEdad">Edad:</label>
+                <input type="text" id="txtEdad">
+            </div>
+            <div class="info-form">
+                <div class="radioBox-sexo">
+                    <input type="radio" name="sexo" id="radioMasculino" value="Masculino">
+                    <label for="radioMasculino"> Masculino</label>
+                </div>
+                <div class="radioBox-sexo">
+                    <input type="radio" name="sexo" id="radioFemenino" value="Femenino">
+                    <label for="radioFemenino"> Femenino</label>
+                </div>
+                <div class="radioBox-sexo">
+                    <input type="radio" name="sexo" id="radioOtro" value="Otro" checked>
+                    <label for="radioOtro"> Otro</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Informacion Adicional</legend>
+            <label for="txtEmpresa">Empresa:</label>
+            <input type="text" id="txtEmpresa">
+        </fieldset>
+        <div class="btn-group">
+        <button type="button" id="btn-submit">Submit</button>
+        <button type="button" id="btn-clear">Limpiar</button>
+        </div>
+    </form>
+            
+
     <style>
         #txtEdad {
             width: 50px;

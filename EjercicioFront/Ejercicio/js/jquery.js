@@ -1,6 +1,7 @@
 let textName = $("#txtNombre");
 let textLastName = $("#txtApellido");
 let textAge = $("#txtEdad");
+let textEmpresa = $("#txtEmpresa");
 
 let formButtonSubmit = $("#btn-submit").click(function(){
     if(textName.val() == "" || textLastName.val() == ""){
@@ -14,4 +15,5 @@ let formButtonClear = $("#btn-clear").click(function(){
     textName.val("");
     textLastName.val("");
     textAge.val("");
+    textEmpresa.val("");
 })
