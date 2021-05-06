@@ -45,5 +45,10 @@ namespace EjercicioEntity.Logic
             context.SaveChanges();
         }
 
+        public Orders GetObject(int id)
+        {
+            return context.Orders.Find(id);
+        }
+
     }
 }

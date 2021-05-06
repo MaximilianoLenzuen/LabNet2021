@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{50183274-93EE-4A7D-95E1-D4C2A7347F85}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>EjercicioEntity.UI</RootNamespace>
-    <AssemblyName>EjercicioEntity.UI</AssemblyName>
+    <ProjectGuid>{5C94EF7C-1F1B-456A-93DF-1F07CC2D3FF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EjercicioEntity.Common</RootNamespace>
+    <AssemblyName>EjercicioEntity.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,26 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EjercicioEntity.Common\EjercicioEntity.Common.csproj">
-      <Project>{5C94EF7C-1F1B-456A-93DF-1F07CC2D3FF7}</Project>
-      <Name>EjercicioEntity.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EjercicioEntity.Entities\EjercicioEntity.Entities.csproj">
-      <Project>{BE311B25-9E94-4B4B-8474-B0B72487F281}</Project>
-      <Name>EjercicioEntity.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EjercicioEntity.Logic\EjercicioEntity.Logic.csproj">
-      <Project>{78E229CF-9358-4D32-A9D0-37BC3FC70907}</Project>
-      <Name>EjercicioEntity.Logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

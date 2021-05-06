@@ -30,7 +30,7 @@ namespace EjercicioEntity.Logic
             {
                 foreach (Employees item in aux)
                 {
-                    sb.AppendLine($"El ID del empleado es: {item.EmployeeID} y vive en: {item.Address}");
+                    sb.AppendLine($"Empleado: {item.FirstName} {item.LastName}, direccion {item.Address}");
                 }
             }
             return sb.ToString();
@@ -42,6 +42,11 @@ namespace EjercicioEntity.Logic
             orderUpdate.Address = direccion;
             context.SaveChanges();
 
+        }
+
+        public Employees GetObject(int id)
+        {
+            return context.Employees.Find(id);
         }
     }
 }

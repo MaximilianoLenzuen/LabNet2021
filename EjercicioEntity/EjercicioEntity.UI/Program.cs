@@ -1,4 +1,5 @@
-﻿using EjercicioEntity.Entities;
+﻿using EjercicioEntity.Common;
+using EjercicioEntity.Entities;
 using EjercicioEntity.Logic;
 using System;
 using System.Collections.Generic;
@@ -14,98 +15,148 @@ namespace EjercicioEntity.UI
         {
             OrdersLogic orders = new OrdersLogic();
             EmployeesLogic employees = new EmployeesLogic();
+            int option;
             int orderEmpID;
             string orderCustomerID;
             string orderShipAddress;
+            string empName;
+            int idChange;
+            int idDelete;
+            string empLastName;
             string empAddress;
             string empCity;
-
-            // Testeo con ordenes
-            //Pido datos
-            /*
-            Console.WriteLine("Ingrese el id del empleado a cargo de la orden");
-            try
+            do
             {
-                orderEmpID = int.Parse(Console.ReadLine());
-            }
-            catch (Exception)
-            {
-                Random r = new Random();
-                orderEmpID = r.Next(1, 9);
-                Console.WriteLine("Caracter invalido, se le asigno uno aleatoriamente");
-            }
-            Console.WriteLine("Ingrese el id del customer EJ: TORTU");
-            orderCustomerID = Console.ReadLine();
-            Console.WriteLine("Ingrese la direccion a la que va");
-            orderShipAddress = Console.ReadLine();
-            // Intento utilizar el Insert Update Delete
-            try
-            {
-                Orders order = new Orders
+                Console.WriteLine(ViewLogic.CargarMenu());
+                option = int.Parse(Console.ReadLine());
+                switch (option)
                 {
-                    EmployeeID = orderEmpID,
-                    CustomerID = orderCustomerID,
-                    ShipAddress = orderShipAddress
-                };
-                orders.Add(order);
-                Console.WriteLine("Orden agregada!");
-                Console.ReadKey();
-                Console.WriteLine("Se presento un problema con la direccion, elija una nuevaa");
-                orders.Update(order, Console.ReadLine());
-                Console.WriteLine(orders.ObtainData());
-                Console.ReadKey();
-                Console.WriteLine("Se anulo la orden. Se elimina del sistema");
-                orders.Delete(order.OrderID);
+                    case 1:
+                        Console.Clear();
+                        try
+                        {
+                            Console.WriteLine("Ingrese el id del customer EJ: TORTU");
+                            orderCustomerID = Console.ReadLine();
+                            Console.WriteLine("Ingrese la direccion a la que va");
+                            orderShipAddress = Console.ReadLine();
+                            Console.WriteLine("Ingrese el id del empleado a cargo de la orden");
+                            orderEmpID = int.Parse(Console.ReadLine());
+                            Orders order1 = new Orders
+                            {
+                                EmployeeID = orderEmpID,
+                                CustomerID = orderCustomerID,
+                                ShipAddress = orderShipAddress
+                            };
+                            orders.Add(order1);
+                            Console.WriteLine("Orden agregada!");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Se ingresó un dato no valido!, vuelva a intentar");
+                        }
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Ingrese el nombre");
+                        empName = Console.ReadLine();
+                        Console.WriteLine("Ingrese el apellido");
+                        empLastName = Console.ReadLine();
+                        Console.WriteLine("Ingrese la direccion del empleado");
+                        empAddress = Console.ReadLine();
+                        Console.WriteLine("Ingrese la ciudad");
+                        empCity = Console.ReadLine();
+                        try
+                        {
+                            Employees employee = new Employees
+                            {
+                                Address = empAddress,
+                                City = empCity,
+                                LastName = empLastName,
+                                FirstName = empName
+                            };
+                            employees.Add(employee);
+                            Console.WriteLine("Empleado agregada!");
+                            break;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Hubo un error");
+                        }
+                        break;
+                    case 3:
+                        try
+                        {
+                            Console.WriteLine("Ingrese el id del empleado a modificar");
+                            idChange = int.Parse(Console.ReadLine());
+                            Employees employees2 = employees.GetObject(idChange);
+                            Console.WriteLine("Ingrese la nueva direccion del empleado");
+                            employees.Update(employees2, Console.ReadLine());
+                            Console.WriteLine("Direccion modificada!");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Error");
+                        }
 
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Hubo un error");
-            }
-            // Muestro la info y verifico el resultado obtenido
-            Console.WriteLine("Presione una tecla para mostrar todas las ordenes");
-            Console.ReadKey();
-            Console.WriteLine(orders.ObtainData());
-            */
-            //Testeo con empleados
-            //Pido los datos
-            Console.WriteLine("Ahora ingresamos un nuevo empleado");
-            Console.WriteLine("Ingrese la direccion del empleado");
-            empAddress = Console.ReadLine();
-            Console.WriteLine("Ingrese la ciudad");
-            empCity = Console.ReadLine();
-            // Intento utilizar el Insert Update Delete
-            try
-            {
-                Employees employee = new Employees
-                {
-                    Address = empAddress,
-                    City = empCity,
-                    LastName = "Generico",
-                    FirstName = "Generico"
-                };
-                employees.Add(employee);
-                Console.WriteLine("Empleado agregada!");
-                Console.ReadKey();
-                Console.WriteLine("Se presento un problema con la direccion, elija una nuevaa");
-                employees.Update(employee, Console.ReadLine());
-                Console.ReadKey();
-                Console.WriteLine("Se anulo el empleado. Se elimina del sistema");
-                employees.Delete(employee.EmployeeID);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Hubo un error");
-            }
-            // Muestro la info y verifico el resultado obtenido
-            Console.WriteLine("Presione una tecla para mostrar todas las empleados");
-            Console.ReadKey();
-            Console.WriteLine(employees.ObtainData());
-            Console.ReadKey();
+                        break;
+                    case 4:
+                        try
+                        {
+                            Console.WriteLine("Ingrese el id de la orden a modificar");
+                            idChange = int.Parse(Console.ReadLine());
+                            Orders order = orders.GetObject(idChange);
+                            Console.WriteLine("Ingrese la nueva direccion hacia donde va la orden");
+                            orders.Update(order, Console.ReadLine());
+                            Console.WriteLine("Direccion modificada!");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Error");
+                        }
 
+                        break;
+                    case 5:
+                        Console.Clear();
+                        try
+                        {
+                            Console.WriteLine("Ingrese el id del empleado a eliminar");
+                            idDelete = int.Parse(Console.ReadLine());
+                            employees.Delete(idDelete);
+                            Console.WriteLine("Empleado eliminado");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Error al eliminar");
+                        }
+                        break;
+                    case 6:
+                        Console.Clear();
+                        try
+                        {
+                            Console.WriteLine("Ingrese el id de orden a eliminar");
+                            idDelete = int.Parse(Console.ReadLine());
+                            orders.Delete(idDelete);
+                            Console.WriteLine("Orden eliminada");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("Error al eliminar");
+                        }
+                        break;
+                    case 7:
+                        Console.Clear();
+                        Console.WriteLine(employees.ObtainData()); 
+                        break;
+                    case 8:
+                        Console.Clear();
+                        Console.WriteLine(orders.ObtainData()); 
+                        break;
+                    case 9:
+                        Console.WriteLine("Gracias por utilizar el programa");
+                        break;
+                }
+            } while (option != 9);
         }
-
-
     }
 }
 
