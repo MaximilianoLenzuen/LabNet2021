@@ -1,0 +1,34 @@
+﻿@model EjercicioMVC.MVC.Models.EmployeesView
+@{
+    ViewBag.Title = "Add Employees";
+}
+
+<div class="container">
+    <h2>Agregar Empleado</h2>
+    <p>Ingrese sus datos</p>
+    <form id="basic-form" method="post">
+        <div class="form-group">
+            <label class="text-white" for="txtNombre">Nombre: </label>
+            <input type="text" class="form-control" id="txtNombre" name="FirstName" placeholder="Ingrese su nombre">
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="txtApellido">Apellido: </label>
+            <input type="text" class="form-control" id="txtApellido" name="LastName" placeholder="Ingrese su apellido">
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="txtDireccion">Direccion: </label>
+            <input type="text" class="form-control" id="txtDireccion" name="Address" placeholder="Ingrese su direccion">
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="txtCiudad">Ciudad: </label>
+            <input type="text" class="form-control" id="txtCiudad" name="City" placeholder="Ingrese su ciudad">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-Crear">Crear</button>
+        <div class="form-group">
+            <label class="text-white" for="txtEmpID">Si desea modificar una orden, ingrese su id: </label>
+            <input type="text" class="form-control" id="txtEmpID" name="ID" placeholder="Ingrese el id">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-Modificar">Modificar</button>
+        <!-- @Html.ActionLink("Para modificar haz clic aqui", "UpdateEmployees", "Employees")-->
+    </form>
+</div>
