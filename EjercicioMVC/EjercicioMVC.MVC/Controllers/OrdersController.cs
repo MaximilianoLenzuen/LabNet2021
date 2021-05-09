@@ -56,7 +56,7 @@ namespace EjercicioMVC.MVC.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("IndexEmployees","Error");
+                return RedirectToAction("IndexOrders","Error");
             }
         }
 
