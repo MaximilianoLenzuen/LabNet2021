@@ -1,0 +1,31 @@
+﻿@model List<EjercicioMVC.MVC.Models.OrdersView>
+@{
+    ViewBag.Title = "List Orders";
+}
+<h1>Lista de Empleados</h1>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">ID Cliente</th>
+            <th scope="col">ID Empleado a cargo</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var orders in Model)
+        {
+        <tr>
+            <td scope="row">@orders.OrderID</td>
+            <td scope="row">@orders.IdCustomer</td>
+            <td scope="row">@orders.EmployeeID</td>
+            <td scope="row">@orders.Address</td>
+            <td scope="row">@Html.ActionLink("Borrar", "DeleteOrder", new { id = orders.OrderID })</td>
+
+        </tr>
+        }
+
+    </tbody>
+</table>    

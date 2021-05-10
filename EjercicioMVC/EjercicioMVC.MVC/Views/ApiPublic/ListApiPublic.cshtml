@@ -1,0 +1,16 @@
+﻿@model List<EjercicioMVC.MVC.Models.DigimonView>
+@{
+    ViewBag.Title = "List Digimons";
+}
+
+<h1>Lista de digimones</h1>
+@foreach (var digimon in Model)
+{
+<div class="form-group">
+    <img src="@digimon.Img" alt="Loading" />
+    <label class="text-white">Nombre: @digimon.Name </label>
+    <label class="text-white">Nivel: @digimon.Level</label>
+</div>
+
+}
+
