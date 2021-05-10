@@ -40,18 +40,27 @@ namespace EjercicioMVC.WebAPI.Controllers
         }
 
         // POST: api/Orders
-        public void Post([FromBody]string value)
+        public void Post([FromBody]OrdersView ord)
         {
+            Orders order = new Orders
+            {
+                EmployeeID = ord.EmployeeID,
+                CustomerID = ord.IdCustomer,
+                ShipAddress = ord.Address,
+            };
+            orderLogic.Add(order);
         }
 
         // PUT: api/Orders/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]OrdersView ord)
         {
+            orderLogic.Update(id,ord.Address,ord.IdCustomer, (int)ord.EmployeeID);
         }
 
         // DELETE: api/Orders/5
         public void Delete(int id)
         {
+            orderLogic.Delete(id);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using EjercicioMVC.Logic;
+﻿using EjercicioMVC.Entities;
+using EjercicioMVC.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,18 +45,29 @@ namespace EjercicioMVC.WebAPI.Controllers
         }
 
         // POST: api/Employees
-        public void Post([FromBody]string value)
+        public void Post([FromBody]EmployeesView emp)
         {
+            Employees employee = new Employees
+            {
+                FirstName = emp.FirstName,
+                LastName = emp.LastName,
+                Address = emp.Address,
+                City = emp.City
+            };
+            empLogic.Add(employee);
+
         }
 
         // PUT: api/Employees/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] EmployeesView emp)
         {
+            empLogic.Update(id,emp.Address, emp.FirstName, emp.LastName, emp.City);
         }
 
         // DELETE: api/Employees/5
         public void Delete(int id)
         {
+            empLogic.Delete(id);
         }
     }
 }
