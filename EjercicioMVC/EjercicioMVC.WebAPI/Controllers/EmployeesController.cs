@@ -16,7 +16,6 @@ namespace EjercicioMVC.WebAPI.Controllers
         public IEnumerable<EmployeesView> Get()
         {
             var employees = empLogic.ObtainData();
-
             List<EmployeesView> empView = employees.Select(e => new EmployeesView
             {
                 ID = e.EmployeeID,
@@ -59,7 +58,7 @@ namespace EjercicioMVC.WebAPI.Controllers
         // PUT: api/Employees/5
         public void Patch(int id, [FromBody] EmployeesView emp)
         {
-            empLogic.Update(id,emp.Address, emp.FirstName, emp.LastName, emp.City);
+            empLogic.Update(id, emp.Address, emp.FirstName, emp.LastName, emp.City);
         }
 
         // DELETE: api/Employees/5

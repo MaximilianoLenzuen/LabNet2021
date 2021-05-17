@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Ciudad</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of employees">
+        <tr>
+            <td scope="row">{{item.ID}}</td>
+            <td scope="row">{{item.FirstName}}</td>
+            <td scope="row">{{item.LastName}}</td>
+            <td scope="row">{{item.Address}}</td>
+            <td scope="row">{{item.City}}</td>
+        </tr>
+    </tbody>
+</table>    

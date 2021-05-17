@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+<div class="delete">
+    <h2>Eliminar empleado</h2>
+    <form [formGroup]="formDelete"(ngSubmit)="onDelete()">
+    <div class="form-group">
+        <label class="text" for="txtDelete">Ingrese el ID del empleado a eliminar: </label>
+        <input formControlName="id" type="text" class="form-control" id="txtDelete" placeholder="Ingrese su id">
+    </div>
+    <button type="submit" class="btn btn-primary" id="btn-Eliminar" [disabled]="!this.formDelete.valid">Eliminar</button>
+    </form>
+</div>
+</div>
