@@ -57,7 +57,7 @@ namespace EjercicioMVC.WebAPI.Controllers
         }
 
         // PUT: api/Employees/5
-        public void Put(int id, [FromBody] EmployeesView emp)
+        public void Patch(int id, [FromBody] EmployeesView emp)
         {
             empLogic.Update(id,emp.Address, emp.FirstName, emp.LastName, emp.City);
         }
