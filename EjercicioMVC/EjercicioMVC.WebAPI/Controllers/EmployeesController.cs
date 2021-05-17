@@ -24,7 +24,6 @@ namespace EjercicioMVC.WebAPI.Controllers
                 LastName = e.LastName,
                 Address = e.Address,
                 City = e.City
-
             }).ToList();
             return empView;
         }
@@ -55,7 +54,6 @@ namespace EjercicioMVC.WebAPI.Controllers
                 City = emp.City
             };
             empLogic.Add(employee);
-
         }
 
         // PUT: api/Employees/5
