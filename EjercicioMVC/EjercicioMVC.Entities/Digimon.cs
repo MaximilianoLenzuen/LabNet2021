@@ -1,12 +1,11 @@
-﻿using EjercicioMVC.MVC.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EjercicioMVC.MVC.Models
+namespace EjercicioMVC.MVC.Entities
 {
-    public class DigimonView
+    public class Digimon
     {
         public string Name { get; set; }
         public string Img { get; set; }

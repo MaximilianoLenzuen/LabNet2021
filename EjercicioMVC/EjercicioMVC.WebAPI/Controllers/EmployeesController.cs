@@ -44,28 +44,55 @@ namespace EjercicioMVC.WebAPI.Controllers
         }
 
         // POST: api/Employees
-        public void Post([FromBody]EmployeesView emp)
+        public IHttpActionResult Post([FromBody]EmployeesView emp)
         {
-            Employees employee = new Employees
+            try
             {
-                FirstName = emp.FirstName,
-                LastName = emp.LastName,
-                Address = emp.Address,
-                City = emp.City
-            };
-            empLogic.Add(employee);
+                Employees employee = new Employees
+                {
+                    FirstName = emp.FirstName,
+                    LastName = emp.LastName,
+                    Address = emp.Address,
+                    City = emp.City
+                };
+                empLogic.Add(employee);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
         }
 
         // PUT: api/Employees/5
-        public void Patch(int id, [FromBody] EmployeesView emp)
+        public IHttpActionResult Patch(int id, [FromBody] EmployeesView emp)
         {
-            empLogic.Update(id,emp.Address, emp.FirstName, emp.LastName, emp.City);
+            try
+            {
+                empLogic.Update(id, emp.Address, emp.FirstName, emp.LastName, emp.City);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
         }
 
         // DELETE: api/Employees/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            empLogic.Delete(id);
+
+            try
+            {
+                empLogic.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }

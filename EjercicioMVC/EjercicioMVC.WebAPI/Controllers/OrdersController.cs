@@ -40,27 +40,54 @@ namespace EjercicioMVC.WebAPI.Controllers
         }
 
         // POST: api/Orders
-        public void Post([FromBody]OrdersView ord)
+        public IHttpActionResult Post([FromBody]OrdersView ord)
         {
-            Orders order = new Orders
+            try
             {
-                EmployeeID = ord.EmployeeID,
-                CustomerID = ord.IdCustomer,
-                ShipAddress = ord.Address,
-            };
-            orderLogic.Add(order);
+                Orders order = new Orders
+                {
+                    EmployeeID = ord.EmployeeID,
+                    CustomerID = ord.IdCustomer,
+                    ShipAddress = ord.Address,
+                };
+                orderLogic.Add(order);
+                return Ok();
+            }
+            catch (Exception ex) 
+            {
+                return InternalServerError(ex);
+            }
+
         }
 
         // PUT: api/Orders/5
-        public void Put(int id, [FromBody]OrdersView ord)
+        public IHttpActionResult Put(int id, [FromBody]OrdersView ord)
         {
-            orderLogic.Update(id,ord.Address,ord.IdCustomer, (int)ord.EmployeeID);
+            try
+            {
+                orderLogic.Update(id, ord.Address, ord.IdCustomer, (int)ord.EmployeeID);
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         // DELETE: api/Orders/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            orderLogic.Delete(id);
+            try
+            {
+                orderLogic.Delete(id);
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }

@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseLogic.cs" />
+    <Compile Include="DigimonExternalApiLogic.cs" />
     <Compile Include="EmployeesLogic.cs" />
     <Compile Include="ICRUDLogic.cs" />
     <Compile Include="OrdersLogic.cs" />
